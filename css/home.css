@@ -1,0 +1,481 @@
+/* Reset e Base */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  min-height: 100vh;
+  background: #faf8f0;
+}
+
+/* Navbar */
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 50px;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-right: auto;
+}
+
+.logo img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.logo span {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #3b5515;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+.navbar ul {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+  margin: 0;
+  padding: 0;
+  padding-right: 2rem;
+}
+
+.navbar ul li a {
+  text-decoration: none;
+  color: #00794a;
+  font-size: 1.5rem;
+  transition: color 0.3s ease;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+
+.navbar ul li a:hover {
+  color: #000;
+}
+
+.navbar ul li a.active {
+  border-bottom: 2px solid #3ab164;
+}
+
+/* Carousel */
+.carousel {
+  margin-top: 120px; /* Altura exata do navbar */
+  position: relative;
+  width: 100%;
+  height: 0;
+  padding-bottom: 56.25%; /* Proporção 16:9 (1080/1920 = 0.5625) */
+  overflow: hidden;
+  background: #8ab67f;
+}
+
+.carousel img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.carousel img.active {
+  opacity: 1;
+}
+
+/* Content */
+.content {
+  margin-top: 100px;
+  padding: 20px;
+  color: #333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.content h1 {
+  text-align: center;
+  color: #5b821f;
+  font-size: 3.5rem;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+.content p {
+  font-size: 1.2rem;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  text-align: center;
+}
+
+.content > div:last-child {
+  border-radius: 20px;
+  border: 2px solid #5b821f;
+  max-width: 100%;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.content img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+/* Cards Row */
+.cards-row {
+  display: flex;
+  gap: 24px;
+  justify-content: center;
+  align-items: stretch;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 5rem auto;
+  padding: 0 20px;
+}
+
+.card {
+  background: #fff;
+  border-radius: 12px;
+  width: 320px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(34, 139, 34, 0.18);
+  transition: transform 250ms ease, box-shadow 250ms ease;
+  cursor: pointer;
+}
+
+.card:hover,
+.card:focus {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 20px 40px rgba(34, 139, 34, 0.28);
+}
+
+.img-wrap {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.card img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+  transition: transform 350ms ease;
+}
+
+.card:hover img,
+.card:focus img {
+  transform: scale(1.06);
+}
+
+.caption {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.caption h3 {
+  margin: 0;
+  font-size: 1.05rem;
+}
+
+.caption p {
+  margin: 6px 0 0;
+  color: #555;
+  font-size: 0.92rem;
+}
+
+/* Footer */
+.footer {
+  margin-top: 5rem;
+  width: 100%;
+  background: linear-gradient(135deg, #3b5515, #5b821f);
+  color: white;
+  padding: 20px;
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.5);
+}
+
+.footer-section {
+  flex: 1;
+  min-width: 200px;
+  text-align: center;
+  margin: 10px;
+}
+
+.footer-section h3 {
+  margin: 0 0 10px 0;
+  font-size: 1.2rem;
+  color: #fff;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+.footer-section p {
+  margin: 5px 0;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-size: 1.1rem;
+}
+
+.social-links a {
+  color: white;
+  margin: 0 10px;
+  text-decoration: none;
+  font-size: 24px;
+  transition: color 0.3s;
+}
+
+.social-links a:hover {
+  color: #0c290f;
+}
+
+.cards span {
+  margin: 0 10px;
+  font-size: 30px;
+  color: #0c290f;
+}
+
+.map {
+  width: 100%;
+  height: 150px;
+  border: none;
+  border-radius: 8px;
+}
+
+.copyright {
+  width: 100%;
+  text-align: center;
+  margin-top: 20px;
+  font-size: 12px;
+  border-top: 1px solid #777;
+  padding-top: 10px;
+}
+
+/* ========== MEDIA QUERIES - RESPONSIVIDADE ========== */
+
+/* Tablets (768px - 1024px) */
+@media (max-width: 1024px) {
+  .navbar {
+    padding: 15px 30px;
+  }
+
+  .logo span {
+    font-size: 1.5rem;
+  }
+
+  .navbar ul {
+    gap: 20px;
+  }
+
+  .navbar ul li a {
+    font-size: 1.2rem;
+  }
+
+  .content h1 {
+    font-size: 2.5rem;
+  }
+
+  .content p {
+    font-size: 1.1rem;
+  }
+
+  .content > div:last-child {
+    margin-left: 0;
+    max-width: 500px;
+  }
+
+  .card {
+    width: 280px;
+  }
+
+  .cards-row {
+    margin-top: 4rem;
+  }
+}
+
+/* Mobile (até 768px) */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 10px 20px;
+    flex-wrap: wrap;
+  }
+
+  .logo {
+    width: 100%;
+    justify-content: center;
+    margin-bottom: 10px;
+  }
+
+  .logo img {
+    width: 60px;
+    height: 60px;
+  }
+
+  .logo span {
+    font-size: 1.3rem;
+  }
+
+  .navbar ul {
+    width: 100%;
+    justify-content: center;
+    gap: 15px;
+    padding-right: 0;
+  }
+
+  .navbar ul li a {
+    font-size: 1rem;
+  }
+
+  .carousel {
+    padding-bottom: 56.25%; /* Mantém proporção 16:9 */
+  }
+
+  .content {
+    margin-top: 50px;
+    padding: 15px;
+  }
+
+  .content h1 {
+    font-size: 2rem;
+  }
+
+  .content p {
+    font-size: 1rem;
+    padding: 0 10px;
+  }
+
+  .content > div:last-child {
+    margin-left: 0;
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .cards-row {
+    margin-top: 3rem;
+    padding: 0 10px;
+    gap: 20px;
+  }
+
+  .card {
+    width: 100%;
+    max-width: 350px;
+  }
+
+  .footer {
+    padding: 15px 10px;
+  }
+
+  .footer-section {
+    min-width: 100%;
+    margin: 15px 0;
+  }
+
+  .footer-section h3 {
+    font-size: 1.1rem;
+  }
+
+  .footer-section p {
+    font-size: 1rem;
+  }
+
+  .social-links a {
+    font-size: 20px;
+    margin: 0 8px;
+  }
+
+  .cards span {
+    font-size: 24px;
+    margin: 0 8px;
+  }
+}
+
+/* Mobile pequeno (até 480px) */
+@media (max-width: 480px) {
+  .navbar {
+    padding: 8px 15px;
+  }
+
+  .logo img {
+    width: 50px;
+    height: 50px;
+  }
+
+  .logo span {
+    font-size: 1.1rem;
+  }
+
+  .navbar ul {
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+
+  .navbar ul li a {
+    font-size: 0.9rem;
+  }
+
+  .carousel {
+    margin-top: 12rem;
+    padding-bottom: 56.25%; /* Mantém proporção 16:9 */
+  }
+
+  .content h1 {
+    font-size: 1.5rem;
+  }
+
+  .content p {
+    font-size: 0.9rem;
+  }
+
+  .card {
+    width: 100%;
+  }
+
+  .caption h3 {
+    font-size: 1rem;
+  }
+
+  .caption p {
+    font-size: 0.85rem;
+  }
+
+  .footer-section h3 {
+    font-size: 1rem;
+  }
+
+  .footer-section p {
+    font-size: 0.9rem;
+  }
+
+  .copyright {
+    font-size: 10px;
+  }
+}
